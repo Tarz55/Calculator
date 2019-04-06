@@ -1,20 +1,38 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <widget xmlns   = "http://www.w3.org/ns/widgets"
     xmlns:gap   = "http://phonegap.com/ns/1.0"
-    id          = "tarzo.calc"
+    id          = "com.ntz.tarzcalculator"
     versionCode = "10"
     version     = "1.0.0" >
 
 <!-- versionCode is optional and Android only -->
 
-  <name>calculator</name>
+  <name>Tarzo Calculator</name>
 
   <description>
-      An example for phonegap build docs.
+      Two plus two is four.
+      Minus one that's three, quick maths !
   </description>
 
-  <author href="https://build.phonegap.com" email="support@phonegap.com">
-      Hardeep Shoker
+  <author href="https://build.phonegap.com" email="irfaannubee555@gmail.com">
+      Tarzo The Great
   </author>
+
+  <platform name="android">
+        <!--
+            ldpi    : 36x36 px
+            mdpi    : 48x48 px
+            hdpi    : 72x72 px
+            xhdpi   : 96x96 px
+            xxhdpi  : 144x144 px
+            xxxhdpi : 192x192 px
+        -->
+        <icon src="res/icon_ ldpi_36.png" density="ldpi" />
+        <icon src="res/icon_mdpi_48.png" density="mdpi" />
+        <icon src="res/icon_hdpi_72.png" density="hdpi" />
+        <icon src="res/icon_xhdpi_96.png" density="xhdpi" />
+        <icon src="res/icon_xxhdpi_144.png" density="xxhdpi" />
+        <icon src="res/icon_xxxhdpi_192.png" density="xxxhdpi" />
+  </platform>
 
 </widget>

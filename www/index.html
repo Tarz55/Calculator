@@ -10,23 +10,39 @@
 	<script>
 		$(document).ready(function(){
 			$('#btn_calc').click(function(){
-				$('#operand1_2').html($('#firstoperand').val() + $('#operator :selected').text() + $('#secondoperand').val());
+				var input_1 =$('#firstoperand');
+				var input_2 =$('#secondoperand');
+				if (input_1.val()==""){  
+                	alert('Operand missing !');
+                	$('#operand1_2').html("Go back and verify your inputs !");
+                	$('#result').html("OPERATION NOT SUCCESSFUL !");
 
-				var op1=($('#firstoperand').val());
-				var op2=($('#secondoperand').val());
-				var operat=($('#operator :selected').text());
+                }else if (input_2.val()==""){  
+                	alert('Operand missing !');
+                	$('#operand1_2').html("Go back and verify your inputs !");
+                	$('#result').html("OPERATION NOT SUCCESSFUL !");
 
-				if (operat=="+"){
-					$('#result').html(parseFloat(op1) + parseFloat(op2));
-				}else if (operat=="-") {
-					$('#result').html(parseFloat(op1) - parseFloat(op2));
-				}else if (operat=="*") {
-					$('#result').html(parseFloat(op1) * parseFloat(op2));
-				}else if (operat=="/") {
-					$('#result').html(parseFloat(op1) / parseFloat(op2));
-				}else{
-					alert ("Calculation Error");
-				}
+                }else{
+                	$('#operand1_2').html($('#firstoperand').val() + $('#operator :selected').text() + $('#secondoperand').val());
+
+					var op1=($('#firstoperand').val());
+					var op2=($('#secondoperand').val());
+					var operat=($('#operator :selected').text());
+
+					if (operat=="+"){
+						$('#result').html(parseFloat(op1) + parseFloat(op2));
+					}else if (operat=="-") {
+						$('#result').html(parseFloat(op1) - parseFloat(op2));
+					}else if (operat=="*") {
+						$('#result').html(parseFloat(op1) * parseFloat(op2));
+					}else if (operat=="/") {
+						$('#result').html(parseFloat(op1) / parseFloat(op2));
+					}else{
+						$('#result').html("OPERATION NOT SUCCESSFUL !");;
+					}
+ 
+                }
+              
 			})
 		})
 						
@@ -72,7 +88,7 @@
 		<div role="main" class="ui-content"> 
 			<form>
 				Enter first operand:<br>
- 				<input type="text" name="firstoperand" id="firstoperand"><br>
+ 				<input type="number" name="firstoperand" id="firstoperand"><br>
  				<select id="operator">
 					<option value="+">+</option>
 					<option value="-">-</option>
@@ -80,7 +96,7 @@
 					<option value="/">/</option>
 				</select>
  				Enter second operand:<br>
-  				<input type="text" name="secondoperand" id="secondoperand">
+  				<input type="number" name="secondoperand" id="secondoperand">
   				<br>
   				<a href="#pagefive" id="btn_calc" class="ui-btn">Calculate</a>
   				
@@ -148,6 +164,7 @@
 		<div role="main" class="ui-content">
 			<label>Operation:</label>
 			 <div id="operand1_2"></div>
+			 <br>
 			 <label>Results:</label>
 			 <div id="result"></div>
 			 
